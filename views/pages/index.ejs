@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%= sample_text%>
+  <%= all_students.student_list[0].name %>
+  <ul>
+    <% for(var i=0; i<all_students.student_list.length; i++) {%>
+       <li><%= all_students.student_list[i].name %></li>
+    <% } %>
+    </ul>
+
+
+  <div>
+    <% all_students.student_list.forEach(function(r) { %>
+      <div class="stu" id=<%= r.index%>></div>
+      <script>
+      document.getElementById('<%= r.index%>').style.width = "300px";
+      document.getElementById('<%= r.index%>').style.height = "300px";
+      document.getElementById('<%= r.index%>').style.border = "thick solid #0000FF";
+      </script> 
+    <% }); %>
+    
+  </div>  
+</body>
+</html>
